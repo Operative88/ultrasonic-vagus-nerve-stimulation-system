@@ -1,0 +1,57 @@
+
+#  Przypisania pinow dla DE0-Nano (Cyclone IV E, EP4CE22F17C6)
+#  Wszystkie wejscia/wyjscia jako 3.3-V LVTTL.
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE22F17C6
+set_global_assignment -name TOP_LEVEL_ENTITY vns_top
+set_global_assignment -name VHDL_INPUT_VERSION VHDL_2008
+set_global_assignment -name VHDL_FILE vns_ultrasound.vhd
+
+#Zegar 50 MHz (potwierdzone)
+set_location_assignment PIN_R8  -to CLOCK_50
+
+#Przyciski KEY (aktywne w stanie niskim) 
+set_location_assignment PIN_J15 -to KEY[0]
+set_location_assignment PIN_E1  -to KEY[1]
+
+#Przelaczniki DIP SW
+set_location_assignment PIN_M1  -to SW[0]
+set_location_assignment PIN_T8  -to SW[1]
+set_location_assignment PIN_B9  -to SW[2]
+set_location_assignment PIN_M15 -to SW[3]
+
+#Diody LED
+set_location_assignment PIN_A15 -to LED[0]
+set_location_assignment PIN_A13 -to LED[1]
+set_location_assignment PIN_B13 -to LED[2]
+set_location_assignment PIN_A11 -to LED[3]
+set_location_assignment PIN_D1  -to LED[4]
+set_location_assignment PIN_F3  -to LED[5]
+set_location_assignment PIN_B1  -to LED[6]
+set_location_assignment PIN_L3  -to LED[7]
+
+#Wyjscia sterujace stopniem mocy (naglowek GPIO_0)
+
+set_location_assignment PIN_D3  -to DRV_P     ;# GPIO_0[0]
+set_location_assignment PIN_C3  -to DRV_N     ;# GPIO_0[1]
+set_location_assignment PIN_A2  -to DRV_EN    ;# GPIO_0[2]
+
+#IO standard dla wszystkich
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK_50
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRV_P
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRV_N
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRV_EN
