@@ -1,6 +1,6 @@
 # Ultrasonic Vagus Nerve Stimulation System
 
-![System Overview](system_overview.jpg)
+![System Overview](my_system.jpg)
 
 ## Description
 
